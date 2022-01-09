@@ -5,8 +5,164 @@
 }
 
 body {
-  background-color: black;
+  background-color: rgb(61, 60, 60);
   width: 100vw;
   height: 100vh;
   color: whitesmoke;
+
+  main {
+    max-width: 80%;
+    height: fit-content;
+    margin: 0 auto;
+
+    .game-section {
+      background-color: rgb(51, 50, 50);
+      width: 80%;
+      margin: 0 auto;
+
+      .game-tiles-section {
+        background-color: rgb(88, 87, 87);
+        width: 70%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+
+        .tile1 {
+          width: 100%;
+          height: 20vh;
+          background-color: black;
+          grid-column: 1 / span 1;
+          grid-row: 1 / span 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid chocolate;
+          font-size: 3rem;
+          font-weight: 900;
+          text-shadow: 2px 2px black;
+        }
+
+        .tile2 {
+          width: 100%;
+          height: 20vh;
+          background-color: black;
+          grid-column: 2 / span 1;
+          grid-row: 1 / span 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid chocolate;
+          font-size: 3rem;
+          font-weight: 900;
+          text-shadow: 2px 2px black;
+        }
+
+        .tile3 {
+          width: 100%;
+          height: 20vh;
+          background-color: black;
+          grid-column: 3 / span 1;
+          grid-row: 1 / span 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid chocolate;
+          font-size: 3rem;
+          font-weight: 900;
+          text-shadow: 2px 2px black;
+        }
+
+        .tile4 {
+          width: 100%;
+          height: 20vh;
+          background-color: black;
+          grid-column: 1 / span 1;
+          grid-row: 2 / span 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid chocolate;
+          font-size: 3rem;
+          font-weight: 900;
+          text-shadow: 2px 2px black;
+        }
+
+        .tile5 {
+          width: 100%;
+          height: 20vh;
+          background-color: black;
+          grid-column: 2 / span 1;
+          grid-row: 2 / span 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid chocolate;
+          font-size: 3rem;
+          font-weight: 900;
+          text-shadow: 2px 2px black;
+        }
+
+        .tile6 {
+          width: 100%;
+          height: 20vh;
+          background-color: black;
+          grid-column: 3 / span 1;
+          grid-row: 2 / span 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid chocolate;
+          font-size: 3rem;
+          font-weight: 900;
+          text-shadow: 2px 2px black;
+        }
+
+        .tile7 {
+          width: 100%;
+          height: 20vh;
+          background-color: black;
+          grid-column: 1 / span 1;
+          grid-row: 3 / span 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid chocolate;
+          font-size: 3rem;
+          font-weight: 900;
+          text-shadow: 2px 2px black;
+        }
+
+        .tile8 {
+          width: 100%;
+          height: 20vh;
+          background-color: black;
+          grid-column: 2 / span 1;
+          grid-row: 3 / span 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid chocolate;
+          font-size: 3rem;
+          font-weight: 900;
+          text-shadow: 2px 2px black;
+        }
+
+        .tile9 {
+          width: 100%;
+          height: 20vh;
+          background-color: black;
+          grid-column: 3 / span 1;
+          grid-row: 3 / span 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid chocolate;
+          font-size: 3rem;
+          font-weight: 900;
+          text-shadow: 2px 2px black;
+        }
+      }
+    }
+  }
 }
