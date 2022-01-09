@@ -3,6 +3,8 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  font-style: oblique;
 }
 
 body {
@@ -20,10 +22,36 @@ body main {
   margin: 0 auto;
 }
 
+body main .welcome {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 1rem auto;
+}
+
+body main .welcome .welcome-text {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  font-weight: 900;
+  text-shadow: 2px 2px black;
+  letter-spacing: 1px;
+}
+
 body main .game-section {
-  background-color: #333232;
   width: 80%;
   margin: 0 auto;
+}
+
+body main .game-section .player-announcement {
+  width: 100%;
+  text-align: center;
+}
+
+body main .game-section .player-announcement span {
+  font-size: 1.5rem;
+  padding: 2rem 0;
 }
 
 body main .game-section .game-tiles-section {
@@ -61,6 +89,7 @@ body main .game-section .game-tiles-section .tile1 {
   font-size: 3rem;
   font-weight: 900;
   text-shadow: 2px 2px black;
+  cursor: pointer;
 }
 
 body main .game-section .game-tiles-section .tile2 {
@@ -86,6 +115,7 @@ body main .game-section .game-tiles-section .tile2 {
   font-size: 3rem;
   font-weight: 900;
   text-shadow: 2px 2px black;
+  cursor: pointer;
 }
 
 body main .game-section .game-tiles-section .tile3 {
@@ -111,6 +141,7 @@ body main .game-section .game-tiles-section .tile3 {
   font-size: 3rem;
   font-weight: 900;
   text-shadow: 2px 2px black;
+  cursor: pointer;
 }
 
 body main .game-section .game-tiles-section .tile4 {
@@ -136,6 +167,7 @@ body main .game-section .game-tiles-section .tile4 {
   font-size: 3rem;
   font-weight: 900;
   text-shadow: 2px 2px black;
+  cursor: pointer;
 }
 
 body main .game-section .game-tiles-section .tile5 {
@@ -161,6 +193,7 @@ body main .game-section .game-tiles-section .tile5 {
   font-size: 3rem;
   font-weight: 900;
   text-shadow: 2px 2px black;
+  cursor: pointer;
 }
 
 body main .game-section .game-tiles-section .tile6 {
@@ -186,6 +219,7 @@ body main .game-section .game-tiles-section .tile6 {
   font-size: 3rem;
   font-weight: 900;
   text-shadow: 2px 2px black;
+  cursor: pointer;
 }
 
 body main .game-section .game-tiles-section .tile7 {
@@ -211,6 +245,7 @@ body main .game-section .game-tiles-section .tile7 {
   font-size: 3rem;
   font-weight: 900;
   text-shadow: 2px 2px black;
+  cursor: pointer;
 }
 
 body main .game-section .game-tiles-section .tile8 {
@@ -236,6 +271,7 @@ body main .game-section .game-tiles-section .tile8 {
   font-size: 3rem;
   font-weight: 900;
   text-shadow: 2px 2px black;
+  cursor: pointer;
 }
 
 body main .game-section .game-tiles-section .tile9 {
@@ -261,5 +297,39 @@ body main .game-section .game-tiles-section .tile9 {
   font-size: 3rem;
   font-weight: 900;
   text-shadow: 2px 2px black;
+  cursor: pointer;
+}
+
+body main .game-section .game-tiles-section .color {
+  background-color: chocolate;
+  color: black;
+  border: 2px solid black;
+}
+
+body main .game-control {
+  width: 100%;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+body main .game-control .reset {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5rem 1.5rem;
+  margin: 0 auto;
+  border-radius: 0.2rem;
+  background-color: red;
+  color: white;
+  text-shadow: 2px 2px black;
+  font-weight: 900;
+  border: 2px solid red;
+  cursor: pointer;
+}
+
+body main .game-control .reset:hover {
+  background-color: #c04646;
+  border: 2px solid #c04646;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
