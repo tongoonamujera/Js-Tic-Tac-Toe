@@ -40,14 +40,21 @@ body {
 
         span {
           font-size: 1.5rem;
-          padding: 2rem 0;
+          padding: 0 0 1rem 0;
+          font-weight: 900;
+          text-shadow: 2px 2px black;
+          letter-spacing: 1px;
+
+          span {
+            height: inherit;
+          }
         }
       }
 
       .game-tiles-section {
         background-color: rgb(88, 87, 87);
         width: 70%;
-        margin: 0 auto;
+        margin: 0.5rem auto;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
