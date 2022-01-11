@@ -7,6 +7,7 @@
 - html5
 - css3
 - Javascript
+- SCSS
 
 ## Getting Started
 
@@ -29,6 +30,7 @@ To get a local copy up and running, follow these simple example steps.
 - Basic Javascript knowledge
 - Basic html5 knowledege
 - Basic css3 knowledge
+- Basic scss knowledge
 
 ## Authors
 
