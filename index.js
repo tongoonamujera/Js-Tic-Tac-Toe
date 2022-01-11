@@ -201,7 +201,6 @@ class TicTacToe {
   }
 }
 
-
 window.addEventListener('load', () => {
   const game = new TicTacToe();
   game.Animate();
