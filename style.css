@@ -351,7 +351,7 @@ body main .game-results {
 body main .color-tie {
   color: red;
   font-weight: 900;
-  text-shadow: 2px 2px #855826;
+  text-shadow: 2px 2px black;
   letter-spacing: 1px;
 }
 
@@ -360,13 +360,5 @@ body main .color-win {
   font-weight: 900;
   text-shadow: 2px 2px #505a19;
   letter-spacing: 1px;
-}
-
-body main .color-win span {
-  color: red;
-}
-
-body main .color-win .exl {
-  color: white;
 }
 /*# sourceMappingURL=style.css.map */

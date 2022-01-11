@@ -245,7 +245,7 @@ body {
     .color-tie {
       color: red;
       font-weight: 900;
-      text-shadow: 2px 2px rgb(133, 88, 38);
+      text-shadow: 2px 2px black;
       letter-spacing: 1px;
     }
 
@@ -254,14 +254,6 @@ body {
       font-weight: 900;
       text-shadow: 2px 2px rgb(80, 90, 25);
       letter-spacing: 1px;
-
-      span {
-        color: red;
-      }
-
-      .exl {
-        color: white;
-      }
     }
   }
 }
