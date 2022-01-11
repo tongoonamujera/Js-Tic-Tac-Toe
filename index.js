@@ -12,9 +12,9 @@ window.addEventListener('load', () => {
 
   let currentPlayer = 'X';
   let isGameActive = true;
-  const PLAYER_X_WON = `CONGRATS PLAYER <span>X</span><span class='exl'>!!!</span>, YOU WON THE GAME`;
-  const PLAYER_O_WON = 'CONGRATS PLAYER <span>X</span><span class="exl">!!!</span>, YOU WON THE GAME';
-  const DRAW = 'THE GAME ENDED AS A TIE, PLEASE PLAY AGAIN';
+  const PLAYER_X_WON = `CONGRATS PLAYER X, YOU WON THE GAME!`;
+  const PLAYER_O_WON = 'CONGRATS PLAYER O, YOU WON THE GAME!';
+  const DRAW = 'THE GAME ENDED AS A TIE, PLEASE PLAY AGAIN!';
   const changePlayer = () => {
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
   }
@@ -51,20 +51,38 @@ window.addEventListener('load', () => {
       }
   }
 
+  const ResultsAnimation = (result, div) => {
+    let i = 0;
+    const words = [result];
+
+    const typeEffect = () => {
+      let word = words[i].split("");
+      const typingLoop = () => {
+        if (word.length > 0 ) {
+          div.innerHTML += word.shift();
+        } 
+        setTimeout(typingLoop, 20);
+      }
+      typingLoop();
+    }
+
+    typeEffect();
+  }
+
   const announceResults = (type) => {
     let resultsDiv = document.querySelector('.game-results');
     switch (type) {
       case PLAYER_X_WON:
-        resultsDiv.innerHTML = PLAYER_X_WON;
+        ResultsAnimation(PLAYER_X_WON, resultsDiv);
         resultsDiv.classList.add('color-win');
         break;
       case PLAYER_O_WON:
-        resultsDiv.innerHTML = PLAYER_O_WON;
+        ResultsAnimation(PLAYER_O_WON, resultsDiv);
         resultsDiv.classList.add('color-win');
         break;
       case DRAW:
         resultsDiv.classList.remove('color-win');
-        resultsDiv.innerText = DRAW;
+        ResultsAnimation(DRAW, resultsDiv);
         resultsDiv.classList.add('color-tie')
     }
   }
