@@ -1,5 +1,12 @@
-window.addEventListener('load', () => {
-  const winningOutcomes = [
+class TicTacToe {
+  constructor() {
+    this.currentPlayer = 'X';
+    this.isGameActive = true;
+    this.PLAYER_X_WON = `CONGRATS PLAYER X, YOU WON THE GAME!`;
+    this.PLAYER_O_WON = 'CONGRATS PLAYER O, YOU WON THE GAME!';
+    this.DRAW = 'THE GAME ENDED AS A TIE, PLEASE PLAY AGAIN!';
+    this.board = [];
+    this.winningOutcomes = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -8,34 +15,29 @@ window.addEventListener('load', () => {
     [0, 3, 6],
     [1, 4, 7],
     [2, 5, 8]
-  ];
-
-  let currentPlayer = 'X';
-  let isGameActive = true;
-  const PLAYER_X_WON = `CONGRATS PLAYER X, YOU WON THE GAME!`;
-  const PLAYER_O_WON = 'CONGRATS PLAYER O, YOU WON THE GAME!';
-  const DRAW = 'THE GAME ENDED AS A TIE, PLEASE PLAY AGAIN!';
-  const changePlayer = () => {
-    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    ];
   }
 
-  const changePlayerTurn = () => {
-    if (currentPlayer === 'X') {
+  changePlayer = () => {
+    this.currentPlayer = this.currentPlayer === 'X' ? 'O' : 'X';
+  }
+
+  changePlayerTurn = () => {
+    if (this.currentPlayer === 'X') {
       return 'O';
     }else {
       return 'X';
     }
   }
 
-  let board = [];
-  const UpdateBoard = (index, player) => {
+  UpdateBoard = (index, player) => {
     if (index !== NaN) {
-      board[index] = player;
-      return board;
+      this.board[index] = player;
+      return this.board;
     }
   }
 
-  const validActions = (tile) => {
+  validActions = (tile) => {
     if (tile.innerText === 'X' || tile.innerText === 'O') {
       return false;
     } else {
@@ -43,7 +45,7 @@ window.addEventListener('load', () => {
     }
   }
 
-  const playerDisplay = (player, tile) => {
+  playerDisplay = (player, tile) => {
     if (player === "X") {
         tile.innerHTML = "O";
       } else {
@@ -51,7 +53,7 @@ window.addEventListener('load', () => {
       }
   }
 
-  const ResultsAnimation = (result, div) => {
+  ResultsAnimation = (result, div) => {
     let i = 0;
     const words = [result];
 
@@ -69,32 +71,31 @@ window.addEventListener('load', () => {
     typeEffect();
   }
 
-  const announceResults = (type) => {
+  announceResults = (type) => {
     let resultsDiv = document.querySelector('.game-results');
     switch (type) {
-      case PLAYER_X_WON:
-        ResultsAnimation(PLAYER_X_WON, resultsDiv);
+      case this.PLAYER_X_WON:
+        this.ResultsAnimation(this.PLAYER_X_WON, resultsDiv);
         resultsDiv.classList.add('color-win');
         break;
-      case PLAYER_O_WON:
-        ResultsAnimation(PLAYER_O_WON, resultsDiv);
+      case this.PLAYER_O_WON:
+        this.ResultsAnimation(this.PLAYER_O_WON, resultsDiv);
         resultsDiv.classList.add('color-win');
         break;
-      case DRAW:
+      case this.DRAW:
         resultsDiv.classList.remove('color-win');
-        ResultsAnimation(DRAW, resultsDiv);
+        this.ResultsAnimation(this.DRAW, resultsDiv);
         resultsDiv.classList.add('color-tie')
     }
   }
 
-  const handlePlayerResults = () => {
+  handlePlayerResults = () => {
     let roundWon = false;
-    for (let i = 0; i < winningOutcomes.length; i++) {
-      const win = winningOutcomes[i];
-      const a = board[win[0]];
-      const b = board[win[1]];
-      const c = board[win[2]];
-      console.log(a, b, c);
+    for (let i = 0; i < this.winningOutcomes.length; i++) {
+      const win = this.winningOutcomes[i];
+      const a = this.board[win[0]];
+      const b = this.board[win[1]];
+      const c = this.board[win[2]];
       if (a === undefined || b === undefined || c === undefined) {
         continue;
       }
@@ -106,39 +107,40 @@ window.addEventListener('load', () => {
     }
 
     if (roundWon) {
-      announceResults(currentPlayer === 'X' ? PLAYER_X_WON: PLAYER_O_WON);
-      isGameActive = false;
+      this.announceResults(this.currentPlayer === 'X' ? this.PLAYER_X_WON: this.PLAYER_O_WON);
+      this.isGameActive = false;
       return;
     }
 
-    if (!board.includes(undefined) && board.length === 9) {
-      announceResults(DRAW);
+    if (!this.board.includes(undefined) && this.board.length === 9) {
+      this.announceResults(this.DRAW);
       return;
     }
   }
 
-  const playerActions = (tile, index, players) => {
-    if (validActions(tile) && isGameActive) {
+  playerActions = (tile, index, players) => {
+    if (this.validActions(tile) && this.isGameActive) {
       const player = document.querySelector('.player');
-      player.innerText = changePlayerTurn();
-      UpdateBoard(index, players);
-      handlePlayerResults();
-      changePlayer();
-      playerDisplay(currentPlayer, tile);
+      player.innerText = this.changePlayerTurn();
+      this.UpdateBoard(index, players);
+      this.handlePlayerResults();
+      this.changePlayer();
+      this.playerDisplay(this.currentPlayer, tile);
       tile.classList.add('color');
-      changeColor(player, currentPlayer);
-      console.log(board);
+      this.changeColor(player, this.currentPlayer);
     }
   }
 
-  const tiles = document.querySelectorAll('.tile');
-  [...tiles].forEach(tile => {
-    tile.addEventListener('click', () => {
-      playerActions(tile, tile.innerText - 1, currentPlayer);
+  gameLogic = () => {
+    const tiles = document.querySelectorAll('.tile');
+    [...tiles].forEach(tile => {
+      tile.addEventListener('click', () => {
+        this.playerActions(tile, tile.innerText - 1, this.currentPlayer);
+      });
     });
-  });
+  }
 
-  const changeColor = (player, currentPlayer) => {
+  changeColor = (player, currentPlayer) => {
     if (currentPlayer === 'O') {
       player.style.color = 'green';
     } else {
@@ -146,16 +148,15 @@ window.addEventListener('load', () => {
     }
   }
 
-  const boardDisplay = () => {
+  boardDisplay = () => {
+    const tiles = document.querySelectorAll('.tile');
     const tile = [...tiles];
     for (let i in tile) {
       tile[i].innerText = +i + 1;
     }
   }
 
-  boardDisplay();
-
-  const Animate = () => {
+  Animate = () => {
     const text = document.querySelector('.welcome-text');
     let i = 0;
     const words = ["HI THERE, WELCOME TO TIC TAC TOE"];
@@ -174,34 +175,37 @@ window.addEventListener('load', () => {
     typeEffect();
   }
 
-  const resetGame = () => {
+  resetGame = () => {
     let resultsDiv = document.querySelector('.game-results');
     const reset = document.querySelector('.reset');
     reset.addEventListener('click', () => {
       const color = document.querySelectorAll('.color');
       if (color.length !== 0) {
-        console.log(color);
         [...color].forEach(colors => {
         colors.classList.remove('color');
-      });
-
-      const text = document.querySelector('.welcome-text');
-      const player = document.querySelector('.player');
-      currentPlayer = 'X';
-      player.innerText = currentPlayer;
-      text.innerText = '';
-      boardDisplay();
-      Animate();
-        isGameActive = true;
+        });
+        const text = document.querySelector('.welcome-text');
+        const player = document.querySelector('.player');
+        this.currentPlayer = 'X';
+        player.innerText = this.currentPlayer;
+        text.innerText = '';
+        this.boardDisplay();
+        this.Animate();
+        this.isGameActive = true;
         resultsDiv.innerText = '';
-      board.length = 0;
+        this.board.length = 0;
       } else {
         alert('Nothing to reset!!!!')
       }
     });
   }
+}
 
-  resetGame();
 
-  Animate();
+window.addEventListener('load', () => {
+  const game = new TicTacToe();
+  game.Animate();
+  game.boardDisplay();
+  game.gameLogic();
+  game.resetGame();
 });
