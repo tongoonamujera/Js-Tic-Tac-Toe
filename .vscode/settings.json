@@ -1,0 +1,7 @@
+{
+  "screencastMode.mouseIndicatorColor": "#03EFEA",
+  "screencastMode.mouseIndicatorSize": 40,
+  "files.autoSave": "onWindowChange",
+  "workbench.colorTheme": "Abyss",
+  "workbench.preferredLightColorTheme": "Default Dark+"
+}
