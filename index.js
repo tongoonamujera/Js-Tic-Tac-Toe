@@ -1,6 +1,17 @@
 window.addEventListener('load', () => {
-  'use strict';
-  let currentPlayer = 'O';
+  const winningOutcomes = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [2, 4, 6],
+    [0, 4, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8]
+  ];
+
+  let currentPlayer = 'X';
+  let isGameActive = true;
   const changePlayer = () => {
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
   }
@@ -12,16 +23,46 @@ window.addEventListener('load', () => {
       return 'X';
     }
   }
+
+  let board = [];
+  const UpdateBoard = (index, player) => {
+    if (index !== NaN) {
+      board[index] = player;
+      return board;
+    }
+  }
+
+  const validActions = (tile) => {
+    if (tile.innerText === 'X' || tile.innerText === 'O') {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  const playerActions = (tile, index, players) => {
+    if (validActions(tile) && isGameActive) {
+      const player = document.querySelector('.player');
+      player.innerText = changePlayerTurn();
+      changePlayer();
+      UpdateBoard(index, players);
+      if (currentPlayer === "X") {
+        tile.innerHTML = "O";
+      } else {
+        tile.innerHTML = "X";
+      }
+      
+      tile.classList.add('color');
+      changeColor(player, currentPlayer);
+      console.log(board);
+    }
+  }
+
   const tiles = document.querySelectorAll('.tile');
   [...tiles].forEach(tile => {
     tile.addEventListener('click', () => {
-      const player = document.querySelector('.player');
       console.log(tile.innerText - 1);
-      changePlayer();
-      changeColor(player, currentPlayer);
-      tile.innerHTML = currentPlayer;
-      player.innerText = changePlayerTurn();
-      tile.classList.add('color');
+      playerActions(tile, tile.innerText - 1, currentPlayer);
     });
   });
 
@@ -32,8 +73,6 @@ window.addEventListener('load', () => {
       player.style.color = 'red';
     }
   }
-
-  const reset = document.querySelector('.reset');
 
   const boardDisplay = () => {
     const tile = [...tiles];
@@ -64,6 +103,7 @@ window.addEventListener('load', () => {
   }
 
   const resetGame = () => {
+    const reset = document.querySelector('.reset');
     reset.addEventListener('click', () => {
       const color = document.querySelectorAll('.color');
       if (color.length !== 0) {
@@ -74,11 +114,12 @@ window.addEventListener('load', () => {
 
       const text = document.querySelector('.welcome-text');
       const player = document.querySelector('.player');
-      currentPlayer = '';
+      currentPlayer = 'X';
       player.innerText = currentPlayer;
       text.innerText = '';
       boardDisplay();
       Animate();
+      board.length = 0;
       } else {
         alert('Nothing to reset!!!!')
       }
