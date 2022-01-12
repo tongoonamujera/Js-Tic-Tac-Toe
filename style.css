@@ -362,7 +362,7 @@ body main .color-win {
   letter-spacing: 1px;
 }
 
-@media only screen and (min-width: 321px) and (max-width: 768px) {
+@media only screen and (max-width: 320px) {
   * {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -370,7 +370,7 @@ body main .color-win {
     padding: 0;
     font-family: "Times New Roman", Times, serif;
     font-style: oblique;
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
   body {
     background-color: #3d3c3c;
@@ -379,7 +379,348 @@ body main .color-win {
     color: whitesmoke;
   }
   body main {
-    max-width: 80%;
+    max-width: 93%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 0 auto;
+  }
+  body main .welcome {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 1rem auto;
+  }
+  body main .welcome .welcome-text {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+    font-weight: 900;
+    text-shadow: 2px 2px black;
+    letter-spacing: 1px;
+  }
+  body main .game-section {
+    width: 100%;
+    margin: 0 auto;
+  }
+  body main .game-section .player-announcement {
+    width: 100%;
+    text-align: center;
+  }
+  body main .game-section .player-announcement span {
+    font-size: 1.5rem;
+    padding: 0 0 1rem 0;
+    font-weight: 900;
+    text-shadow: 2px 2px black;
+    letter-spacing: 1px;
+  }
+  body main .game-section .player-announcement span span {
+    height: inherit;
+  }
+  body main .game-section .game-tiles-section {
+    background-color: #585757;
+    width: 100%;
+    margin: 0.5rem auto;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+  }
+  body main .game-section .game-tiles-section .tile1 {
+    width: 100%;
+    height: 20vh;
+    background-color: black;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / span 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / span 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border: 1px solid chocolate;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 2px 2px black;
+    cursor: pointer;
+  }
+  body main .game-section .game-tiles-section .tile2 {
+    width: 100%;
+    height: 20vh;
+    background-color: black;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / span 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / span 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border: 1px solid chocolate;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 2px 2px black;
+    cursor: pointer;
+  }
+  body main .game-section .game-tiles-section .tile3 {
+    width: 100%;
+    height: 20vh;
+    background-color: black;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / span 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / span 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border: 1px solid chocolate;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 2px 2px black;
+    cursor: pointer;
+  }
+  body main .game-section .game-tiles-section .tile4 {
+    width: 100%;
+    height: 20vh;
+    background-color: black;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / span 1;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / span 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border: 1px solid chocolate;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 2px 2px black;
+    cursor: pointer;
+  }
+  body main .game-section .game-tiles-section .tile5 {
+    width: 100%;
+    height: 20vh;
+    background-color: black;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / span 1;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / span 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border: 1px solid chocolate;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 2px 2px black;
+    cursor: pointer;
+  }
+  body main .game-section .game-tiles-section .tile6 {
+    width: 100%;
+    height: 20vh;
+    background-color: black;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / span 1;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / span 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border: 1px solid chocolate;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 2px 2px black;
+    cursor: pointer;
+  }
+  body main .game-section .game-tiles-section .tile7 {
+    width: 100%;
+    height: 20vh;
+    background-color: black;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / span 1;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / span 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border: 1px solid chocolate;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 2px 2px black;
+    cursor: pointer;
+  }
+  body main .game-section .game-tiles-section .tile8 {
+    width: 100%;
+    height: 20vh;
+    background-color: black;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / span 1;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / span 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border: 1px solid chocolate;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 2px 2px black;
+    cursor: pointer;
+  }
+  body main .game-section .game-tiles-section .tile9 {
+    width: 100%;
+    height: 20vh;
+    background-color: black;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / span 1;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / span 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border: 1px solid chocolate;
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 2px 2px black;
+    cursor: pointer;
+  }
+  body main .game-section .game-tiles-section .color {
+    background-color: chocolate;
+    color: black;
+    border: 2px solid black;
+  }
+  body main .game-control {
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  body main .game-control .reset {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0.5rem 1.5rem;
+    margin: 0 auto;
+    border-radius: 0.2rem;
+    background-color: red;
+    color: white;
+    text-shadow: 2px 2px black;
+    font-weight: 900;
+    border: 2px solid red;
+    cursor: pointer;
+  }
+  body main .game-control .reset:hover {
+    background-color: #c04646;
+    border: 2px solid #c04646;
+    cursor: pointer;
+  }
+  body main .game-results {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  body main .color-tie {
+    color: red;
+    font-weight: 900;
+    text-shadow: 2px 2px black;
+    letter-spacing: 1px;
+  }
+  body main .color-win {
+    color: #16cf16;
+    font-weight: 900;
+    text-shadow: 2px 2px #505a19;
+    letter-spacing: 1px;
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+  * {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", Times, serif;
+    font-style: oblique;
+    font-size: 0.95rem;
+  }
+  body {
+    background-color: #3d3c3c;
+    max-width: 100vw;
+    max-height: 100vh;
+    color: whitesmoke;
+  }
+  body main {
+    max-width: 91%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
