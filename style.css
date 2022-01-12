@@ -482,7 +482,7 @@ body main .color-win {
     left: 0;
     right: 0;
     max-width: 100vw;
-    height: 95.5vh;
+    height: 97.5vh;
     z-index: 99;
     background-color: rgba(206, 203, 203, 0.1);
     display: -webkit-box;
@@ -504,6 +504,16 @@ body main .color-win {
     background-color: rgba(255, 255, 255, 0.5);
     border: 2px solid #2c2b2b;
     border-radius: 0.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   body .overlay-div .overlay .body {
     width: -webkit-fit-content;
@@ -516,7 +526,7 @@ body main .color-win {
   }
   body .overlay-div .overlay .actions {
     width: 70%;
-    margin: 1.5rem auto auto auto;
+    margin: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -930,6 +940,16 @@ body main .color-win {
     background-color: rgba(255, 255, 255, 0.5);
     border: 2px solid #2c2b2b;
     border-radius: 0.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   body .overlay-div .overlay .body {
     width: -webkit-fit-content;
@@ -942,7 +962,7 @@ body main .color-win {
   }
   body .overlay-div .overlay .actions {
     width: 60%;
-    margin: 1.5rem auto auto auto;
+    margin: auto auto auto auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

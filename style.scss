@@ -364,7 +364,7 @@ body {
       left: 0;
       right: 0;
       max-width: 100vw;
-      height: 95.5vh;
+      height: 97.5vh;
       z-index: 99;
       background-color: rgba(206, 203, 203, 0.1);
       display: flex;
@@ -380,6 +380,9 @@ body {
         background-color: rgba(255, 255, 255, 0.5);
         border: 2px solid rgb(44, 43, 43);
         border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         .body {
           width: fit-content;
@@ -391,7 +394,7 @@ body {
 
         .actions {
           width: 70%;
-          margin: 1.5rem auto auto auto;
+          margin: auto;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -723,6 +726,9 @@ body {
         background-color: rgba(255, 255, 255, 0.5);
         border: 2px solid rgb(44, 43, 43);
         border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         .body {
           width: fit-content;
@@ -734,7 +740,7 @@ body {
 
         .actions {
           width: 60%;
-          margin: 1.5rem auto auto auto;
+          margin: auto auto auto auto;
           display: flex;
           justify-content: space-between;
           align-items: center;
