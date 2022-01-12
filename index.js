@@ -3,8 +3,8 @@ class TicTacToe {
     this.currentPlayer = 'X';
     this.isGameActive = true;
     this.PLAYER_X_WON = `CONGRATS PLAYER X, YOU WON THE GAME!`;
-    this.PLAYER_O_WON = 'CONGRATS PLAYER O, YOU WON THE GAME!';
-    this.DRAW = 'THE GAME ENDED AS A TIE, PLEASE PLAY AGAIN!';
+    this.PLAYER_O_WON = `CONGRATS PLAYER O, YOU WON THE GAME!`;
+    this.DRAW = `THE GAME ENDED AS A TIE, PLEASE PLAY AGAIN!`;
     this.board = [];
     this.winningOutcomes = [
     [0, 1, 2],
