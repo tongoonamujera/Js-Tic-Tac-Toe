@@ -175,7 +175,20 @@ class TicTacToe {
     typeEffect();
   }
 
+  removeOverlay = () => {
+    const overlay = document.querySelector('.overlay-div');
+    const btns = document.querySelectorAll('.confirmation-btn');
+    if (btns) {
+      [...btns].forEach(btn => {
+        btn.addEventListener('click', () => {
+          overlay.classList.remove('overlay-display');
+        });
+      });
+    }
+  }
+
   resetGame = () => {
+    const overlay = document.querySelector('.overlay-div');
     let resultsDiv = document.querySelector('.game-results');
     const reset = document.querySelector('.reset');
     reset.addEventListener('click', () => {
@@ -195,7 +208,7 @@ class TicTacToe {
         resultsDiv.innerText = '';
         this.board.length = 0;
       } else {
-        alert('Nothing to reset!!!!')
+        overlay.classList.add('overlay-display');
       }
     });
   }
@@ -207,4 +220,5 @@ window.addEventListener('load', () => {
   game.boardDisplay();
   game.gameLogic();
   game.resetGame();
+  game.removeOverlay();
 });
