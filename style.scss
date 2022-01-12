@@ -257,3 +257,266 @@ body {
     }
   }
 }
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", Times, serif;
+    font-style: oblique;
+    font-size: 1rem;
+  }
+
+  body {
+    background-color: rgb(61, 60, 60);
+    max-width: 100vw;
+    max-height: 100vh;
+    color: whitesmoke;
+
+    main {
+      max-width: 80%;
+      height: fit-content;
+      margin: 0 auto;
+
+      .welcome {
+        width: fit-content;
+        margin: 1rem auto;
+
+        .welcome-text {
+          width: fit-content;
+          margin: auto;
+          font-size: 1rem;
+          font-weight: 900;
+          text-shadow: 2px 2px black;
+          letter-spacing: 1px;
+        }
+      }
+
+      .game-section {
+        width: 100%;
+        margin: 0 auto;
+
+        .player-announcement {
+          width: 100%;
+          text-align: center;
+
+          span {
+            font-size: 1.5rem;
+            padding: 0 0 1rem 0;
+            font-weight: 900;
+            text-shadow: 2px 2px black;
+            letter-spacing: 1px;
+
+            span {
+              height: inherit;
+            }
+          }
+        }
+
+        .game-tiles-section {
+          background-color: rgb(88, 87, 87);
+          width: 98%;
+          margin: 0.5rem auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 1fr 1fr 1fr;
+
+          .tile1 {
+            width: 100%;
+            height: 20vh;
+            background-color: black;
+            grid-column: 1 / span 1;
+            grid-row: 1 / span 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid chocolate;
+            font-size: 3rem;
+            font-weight: 900;
+            text-shadow: 2px 2px black;
+            cursor: pointer;
+          }
+
+          .tile2 {
+            width: 100%;
+            height: 20vh;
+            background-color: black;
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid chocolate;
+            font-size: 3rem;
+            font-weight: 900;
+            text-shadow: 2px 2px black;
+            cursor: pointer;
+          }
+
+          .tile3 {
+            width: 100%;
+            height: 20vh;
+            background-color: black;
+            grid-column: 3 / span 1;
+            grid-row: 1 / span 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid chocolate;
+            font-size: 3rem;
+            font-weight: 900;
+            text-shadow: 2px 2px black;
+            cursor: pointer;
+          }
+
+          .tile4 {
+            width: 100%;
+            height: 20vh;
+            background-color: black;
+            grid-column: 1 / span 1;
+            grid-row: 2 / span 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid chocolate;
+            font-size: 3rem;
+            font-weight: 900;
+            text-shadow: 2px 2px black;
+            cursor: pointer;
+          }
+
+          .tile5 {
+            width: 100%;
+            height: 20vh;
+            background-color: black;
+            grid-column: 2 / span 1;
+            grid-row: 2 / span 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid chocolate;
+            font-size: 3rem;
+            font-weight: 900;
+            text-shadow: 2px 2px black;
+            cursor: pointer;
+          }
+
+          .tile6 {
+            width: 100%;
+            height: 20vh;
+            background-color: black;
+            grid-column: 3 / span 1;
+            grid-row: 2 / span 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid chocolate;
+            font-size: 3rem;
+            font-weight: 900;
+            text-shadow: 2px 2px black;
+            cursor: pointer;
+          }
+
+          .tile7 {
+            width: 100%;
+            height: 20vh;
+            background-color: black;
+            grid-column: 1 / span 1;
+            grid-row: 3 / span 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid chocolate;
+            font-size: 3rem;
+            font-weight: 900;
+            text-shadow: 2px 2px black;
+            cursor: pointer;
+          }
+
+          .tile8 {
+            width: 100%;
+            height: 20vh;
+            background-color: black;
+            grid-column: 2 / span 1;
+            grid-row: 3 / span 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid chocolate;
+            font-size: 3rem;
+            font-weight: 900;
+            text-shadow: 2px 2px black;
+            cursor: pointer;
+          }
+
+          .tile9 {
+            width: 100%;
+            height: 20vh;
+            background-color: black;
+            grid-column: 3 / span 1;
+            grid-row: 3 / span 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid chocolate;
+            font-size: 3rem;
+            font-weight: 900;
+            text-shadow: 2px 2px black;
+            cursor: pointer;
+          }
+
+          .color {
+            background-color: chocolate;
+            color: black;
+            border: 2px solid black;
+          }
+        }
+      }
+
+      .game-control {
+        width: 100%;
+        margin-top: 1rem;
+        text-align: center;
+
+        .reset {
+          width: fit-content;
+          padding: 0.5rem 1.5rem;
+          margin: 0 auto;
+          border-radius: 0.2rem;
+          background-color: red;
+          color: white;
+          text-shadow: 2px 2px black;
+          font-weight: 900;
+          border: 2px solid red;
+          cursor: pointer;
+
+          &:hover {
+            background-color: rgb(192, 70, 70);
+            border: 2px solid rgb(192, 70, 70);
+            cursor: pointer;
+          }
+        }
+      }
+
+      .game-results {
+        width: fit-content;
+        margin: 0 auto;
+      }
+
+      .color-tie {
+        color: red;
+        font-weight: 900;
+        text-shadow: 2px 2px black;
+        letter-spacing: 1px;
+      }
+
+      .color-win {
+        color: rgb(22, 207, 22);
+        font-weight: 900;
+        text-shadow: 2px 2px rgb(80, 90, 25);
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
