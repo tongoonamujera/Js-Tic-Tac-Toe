@@ -187,29 +187,34 @@ class TicTacToe {
     }
   }
 
-  resetGame = () => {
+  resetContainerFunc = () => {
     const overlay = document.querySelector('.overlay-div');
     let resultsDiv = document.querySelector('.game-results');
+
+    const color = document.querySelectorAll('.color');
+    if (color.length !== 0) {
+      [...color].forEach(colors => {
+      colors.classList.remove('color');
+      });
+      const text = document.querySelector('.welcome-text');
+      const player = document.querySelector('.player');
+      this.currentPlayer = 'X';
+      player.innerText = this.currentPlayer;
+      text.innerText = '';
+      this.boardDisplay();
+      this.Animate();
+      this.isGameActive = true;
+      resultsDiv.innerText = '';
+      this.board.length = 0;
+    } else {
+      overlay.classList.add('overlay-display');
+    }
+  }
+
+  resetGame = () => {
     const reset = document.querySelector('.reset');
     reset.addEventListener('click', () => {
-      const color = document.querySelectorAll('.color');
-      if (color.length !== 0) {
-        [...color].forEach(colors => {
-        colors.classList.remove('color');
-        });
-        const text = document.querySelector('.welcome-text');
-        const player = document.querySelector('.player');
-        this.currentPlayer = 'X';
-        player.innerText = this.currentPlayer;
-        text.innerText = '';
-        this.boardDisplay();
-        this.Animate();
-        this.isGameActive = true;
-        resultsDiv.innerText = '';
-        this.board.length = 0;
-      } else {
-        overlay.classList.add('overlay-display');
-      }
+      this.resetContainerFunc();
     });
   }
 }
