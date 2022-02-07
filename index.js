@@ -7,14 +7,14 @@ class TicTacToe {
     this.DRAW = `THE GAME ENDED AS A TIE, PLEASE PLAY AGAIN!`;
     this.board = [];
     this.winningOutcomes = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [2, 4, 6],
-    [0, 4, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8]
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [2, 4, 6],
+      [0, 4, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8]
     ];
   }
 
@@ -25,12 +25,13 @@ class TicTacToe {
   changePlayerTurn = () => {
     if (this.currentPlayer === 'X') {
       return 'O';
-    }else {
+    } else {
       return 'X';
     }
   }
 
-  UpdateBoard = (index, player) => {
+  UpdateBoard = (...args) => {
+    const [index, player] = args;
     if (index !== NaN) {
       this.board[index] = player;
       return this.board;
@@ -45,24 +46,26 @@ class TicTacToe {
     }
   }
 
-  playerDisplay = (player, tile) => {
+  playerDisplay = (...args) => {
+    const [player, tile] = args;
     if (player === "X") {
-        tile.innerHTML = "O";
-      } else {
-        tile.innerHTML = "X";
-      }
+      tile.innerHTML = "O";
+    } else {
+      tile.innerHTML = "X";
+    }
   }
 
-  ResultsAnimation = (result, div) => {
+  ResultsAnimation = (...args) => {
+    const [result, div] = args;
     let i = 0;
     const words = [result];
 
     const typeEffect = () => {
       let word = words[i].split("");
       const typingLoop = () => {
-        if (word.length > 0 ) {
+        if (word.length > 0) {
           div.innerHTML += word.shift();
-        } 
+        }
         setTimeout(typingLoop, 20);
       }
       typingLoop();
@@ -89,8 +92,29 @@ class TicTacToe {
     }
   }
 
+  winningCombination = (...args) => {
+    const [winCombs, res] = args;
+    if (res !== 'undefined') {
+      const green = document.querySelectorAll('.green');
+      green.forEach(green => {
+        green.classList.remove('green');
+      });
+    } else {
+      for (let i in winCombs) {
+      const tiles = document.querySelector(`.tile${winCombs[i] + 1}`);
+      tiles.classList.add('green');
+    }
+
+      const green = document.querySelectorAll('.green');
+      green.forEach(green => {
+        green.style.color = 'green';
+      });
+    }
+  }
+
   handlePlayerResults = () => {
     let roundWon = false;
+    const winingCombinations = [];
     for (let i = 0; i < this.winningOutcomes.length; i++) {
       const win = this.winningOutcomes[i];
       const a = this.board[win[0]];
@@ -102,13 +126,17 @@ class TicTacToe {
 
       if (a === b && b === c) {
         roundWon = true;
+        winingCombinations.push(win[0])
+        winingCombinations.push(win[1]);
+        winingCombinations.push(win[2]);
         break;
       }
     }
 
     if (roundWon) {
-      this.announceResults(this.currentPlayer === 'X' ? this.PLAYER_X_WON: this.PLAYER_O_WON);
+      this.announceResults(this.currentPlayer === 'X' ? this.PLAYER_X_WON : this.PLAYER_O_WON);
       this.isGameActive = false;
+      this.winningCombination(winingCombinations, 'undefined');
       return;
     }
 
@@ -118,7 +146,8 @@ class TicTacToe {
     }
   }
 
-  playerActions = (tile, index, players) => {
+  playerActions = (...args) => {
+    const [tile, index, players] = args;
     if (this.validActions(tile) && this.isGameActive) {
       const player = document.querySelector('.player');
       player.innerText = this.changePlayerTurn();
@@ -140,7 +169,8 @@ class TicTacToe {
     });
   }
 
-  changeColor = (player, currentPlayer) => {
+  changeColor = (...args) => {
+    const [player, currentPlayer] = args;
     if (currentPlayer === 'O') {
       player.style.color = 'green';
     } else {
@@ -164,9 +194,9 @@ class TicTacToe {
     const typeEffect = () => {
       let word = words[i].split("");
       const typingLoop = () => {
-        if (word.length > 0 ) {
+        if (word.length > 0) {
           text.innerHTML += word.shift();
-        } 
+        }
         setTimeout(typingLoop, 150);
       }
       typingLoop();
@@ -194,7 +224,7 @@ class TicTacToe {
     const color = document.querySelectorAll('.color');
     if (color.length !== 0) {
       [...color].forEach(colors => {
-      colors.classList.remove('color');
+        colors.classList.remove('color');
       });
       const text = document.querySelector('.welcome-text');
       const player = document.querySelector('.player');
@@ -211,10 +241,17 @@ class TicTacToe {
     }
   }
 
+  removeColor = () => {
+    const color = document.querySelectorAll('.green');
+    color.forEach(color => color.classList.remove('green'));
+    console.log(color);
+  }
+
   resetGame = () => {
     const reset = document.querySelector('.reset');
     reset.addEventListener('click', () => {
       this.resetContainerFunc();
+      this.removeColor();
     });
   }
 }
