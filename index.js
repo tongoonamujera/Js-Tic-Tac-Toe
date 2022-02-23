@@ -98,11 +98,6 @@ class TicTacToe {
         const tiles = document.querySelector(`.tile${winCombs[i] + 1}`);
         tiles.classList.add('green');
       }
-    } else {
-      const green = document.querySelectorAll('.green');
-      green.forEach(green => {
-        green.classList.remove('green');
-      });
     }
   }
 
@@ -224,7 +219,6 @@ class TicTacToe {
   removeColor = () => {
     const color = document.querySelectorAll('.green');
     color.forEach(color => color.classList.remove('green'));
-    console.log(color);
   }
 
   resetGame = () => {
