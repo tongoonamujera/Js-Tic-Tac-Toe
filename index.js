@@ -55,23 +55,21 @@ class TicTacToe {
     }
   }
 
+  typeEffect = (words, div) => {
+    let word = words[0].split("");
+    const typingLoop = () => {
+      if (word.length > 0) {
+        div.innerHTML += word.shift();
+      }
+      setTimeout(typingLoop, 20);
+    }
+    typingLoop();
+  }
+
   ResultsAnimation = (...args) => {
     const [result, div] = args;
-    let i = 0;
     const words = [result];
-
-    const typeEffect = () => {
-      let word = words[i].split("");
-      const typingLoop = () => {
-        if (word.length > 0) {
-          div.innerHTML += word.shift();
-        }
-        setTimeout(typingLoop, 20);
-      }
-      typingLoop();
-    }
-
-    typeEffect();
+    this.typeEffect(words, div);
   }
 
   announceResults = (type) => {
@@ -114,7 +112,7 @@ class TicTacToe {
 
   handlePlayerResults = () => {
     let roundWon = false;
-    const winingCombinations = [];
+    let winingCombinations = [];
     for (let i = 0; i < this.winningOutcomes.length; i++) {
       const win = this.winningOutcomes[i];
       const a = this.board[win[0]];
@@ -126,9 +124,7 @@ class TicTacToe {
 
       if (a === b && b === c) {
         roundWon = true;
-        winingCombinations.push(win[0])
-        winingCombinations.push(win[1]);
-        winingCombinations.push(win[2]);
+        winingCombinations = [win[0], win[1], win[2]];
         break;
       }
     }
@@ -188,21 +184,8 @@ class TicTacToe {
 
   Animate = () => {
     const text = document.querySelector('.welcome-text');
-    let i = 0;
     const words = ["HI THERE, WELCOME TO TIC TAC TOE"];
-
-    const typeEffect = () => {
-      let word = words[i].split("");
-      const typingLoop = () => {
-        if (word.length > 0) {
-          text.innerHTML += word.shift();
-        }
-        setTimeout(typingLoop, 150);
-      }
-      typingLoop();
-    }
-
-    typeEffect();
+    this.typeEffect(words, text);
   }
 
   removeOverlay = () => {
