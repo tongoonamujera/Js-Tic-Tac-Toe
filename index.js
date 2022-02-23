@@ -6,6 +6,7 @@ class TicTacToe {
     this.PLAYER_O_WON = `CONGRATS PLAYER O, YOU WON THE GAME!`;
     this.DRAW = `THE GAME ENDED AS A TIE, PLEASE PLAY AGAIN!`;
     this.board = [];
+    this.win = false;
     this.winningOutcomes = [
       [0, 1, 2],
       [3, 4, 5],
@@ -91,21 +92,17 @@ class TicTacToe {
   }
 
   winningCombination = (...args) => {
-    const [winCombs, res] = args;
-    if (res !== 'undefined') {
+    const [winCombs] = args;
+
+    if (this.win) {
+      for (let i in winCombs) {
+        const tiles = document.querySelector(`.tile${winCombs[i] + 1}`);
+        tiles.classList.add('green');
+      }
+    } else {
       const green = document.querySelectorAll('.green');
       green.forEach(green => {
         green.classList.remove('green');
-      });
-    } else {
-      for (let i in winCombs) {
-      const tiles = document.querySelector(`.tile${winCombs[i] + 1}`);
-      tiles.classList.add('green');
-    }
-
-      const green = document.querySelectorAll('.green');
-      green.forEach(green => {
-        green.style.color = 'green';
       });
     }
   }
@@ -132,7 +129,8 @@ class TicTacToe {
     if (roundWon) {
       this.announceResults(this.currentPlayer === 'X' ? this.PLAYER_X_WON : this.PLAYER_O_WON);
       this.isGameActive = false;
-      this.winningCombination(winingCombinations, 'undefined');
+      this.win = true;
+      this.winningCombination(winingCombinations);
       return;
     }
 
@@ -235,6 +233,7 @@ class TicTacToe {
     reset.addEventListener('click', () => {
       this.resetContainerFunc();
       this.removeColor();
+      this.win = false;
     });
   }
 }
@@ -246,4 +245,5 @@ window.addEventListener('load', () => {
   game.gameLogic();
   game.resetGame();
   game.removeOverlay();
+  game.winningCombination();
 });

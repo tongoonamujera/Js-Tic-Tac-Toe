@@ -412,6 +412,11 @@ body main .game-section .game-tiles-section .color {
   border: 2px solid black;
 }
 
+body main .game-section .game-tiles-section .green {
+  color: green;
+  background-color: red;
+}
+
 body main .game-control {
   width: 100%;
   margin-top: 1rem;
@@ -852,6 +857,10 @@ body main .color-win {
     color: black;
     border: 2px solid black;
   }
+  body main .game-section .game-tiles-section .green {
+    color: green;
+    background-color: red;
+  }
   body main .game-control {
     width: 100%;
     margin-top: 1rem;
@@ -1288,6 +1297,10 @@ body main .color-win {
     background-color: chocolate;
     color: black;
     border: 2px solid black;
+  }
+  body main .game-section .game-tiles-section .green {
+    color: green;
+    background-color: red;
   }
   body main .game-control {
     width: 100%;
