@@ -93,7 +93,6 @@ class TicTacToe {
 
   winningCombination = (...args) => {
     const [winCombs] = args;
-
     if (this.win) {
       for (let i in winCombs) {
         const tiles = document.querySelector(`.tile${winCombs[i] + 1}`);
@@ -245,5 +244,4 @@ window.addEventListener('load', () => {
   game.gameLogic();
   game.resetGame();
   game.removeOverlay();
-  game.winningCombination();
 });
