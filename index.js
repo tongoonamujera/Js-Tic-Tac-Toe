@@ -195,14 +195,14 @@ class TicTacToe {
   resetContainerFunc = () => {
     const overlay = document.querySelector('.overlay-div');
     let resultsDiv = document.querySelector('.game-results');
-
+    const text = document.querySelector('.welcome-text');
+    const player = document.querySelector('.player');
     const color = document.querySelectorAll('.color');
+
     if (color.length !== 0) {
       [...color].forEach(colors => {
         colors.classList.remove('color');
       });
-      const text = document.querySelector('.welcome-text');
-      const player = document.querySelector('.player');
       this.currentPlayer = 'X';
       player.innerText = this.currentPlayer;
       text.innerText = '';
