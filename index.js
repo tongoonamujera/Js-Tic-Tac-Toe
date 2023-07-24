@@ -215,6 +215,7 @@ class TicTacToe {
       [...color].forEach(colors => {
         colors.classList.remove('color');
       });
+      this.lastMove.length = 0;
       this.currentPlayer = 'X';
       player.innerText = this.currentPlayer;
       text.innerText = '';
