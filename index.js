@@ -37,6 +37,7 @@ class TicTacToe {
     if (index !== NaN) {
       this.board[index] = player;
       this.lastMove.push(index);
+      console.log(this.lastMove);
       return this.board;
     }
   }
