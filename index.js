@@ -38,6 +38,7 @@ class TicTacToe {
       this.board[index] = player;
       this.lastMove.push(index);
       console.log(this.lastMove);
+      console.log(this.board);
       return this.board;
     }
   }
