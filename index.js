@@ -174,7 +174,7 @@ class TicTacToe {
   }
 
   reverseMove = () => {
-    
+    return this.lastMove.length !== 0 && this.lastMove.filter(this.lastMove.pop())
   }
 
   boardDisplay = () => {
