@@ -175,7 +175,14 @@ class TicTacToe {
   }
 
   reverseMove = () => {
-    return this.lastMove.length !== 0 && this.lastMove.filter(this.lastMove.pop())
+    let index;
+    if(this.lastMove.length !== 0){
+      index = this.lastMove.pop();
+      this.board[index] = undefined;
+      let tile = document.querySelectorAll('.tile')[index];
+      tile.innerText = index + 1;
+    }
+   return this.lastMove;
   }
 
   boardDisplay = () => {
@@ -236,6 +243,7 @@ class TicTacToe {
 
   resetGame = () => {
     const reset = document.querySelector('.reset');
+    document.document.querySelector('.reset-move').addEventListener("click", this.reversemove);
     reset.addEventListener('click', () => {
       this.resetContainerFunc();
       this.removeColor();
