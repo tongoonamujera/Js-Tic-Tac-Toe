@@ -7,6 +7,7 @@ class TicTacToe {
     this.DRAW = `THE GAME ENDED AS A TIE, PLEASE PLAY AGAIN!`;
     this.board = [];
     this.win = false;
+    this.lastMove = [];
     this.winningOutcomes = [
       [0, 1, 2],
       [3, 4, 5],
@@ -35,6 +36,7 @@ class TicTacToe {
     const [index, player] = args;
     if (index !== NaN) {
       this.board[index] = player;
+      this.lastMove.push(index);
       return this.board;
     }
   }
@@ -101,6 +103,10 @@ class TicTacToe {
     }
   }
 
+  nextPossibleMovesAvail = () => {
+    
+  }
+
   handlePlayerResults = () => {
     let roundWon = false;
     let winingCombinations = [];
@@ -164,6 +170,10 @@ class TicTacToe {
     } else {
       player.style.color = 'red';
     }
+  }
+
+  reverseMove = () => {
+    
   }
 
   boardDisplay = () => {
