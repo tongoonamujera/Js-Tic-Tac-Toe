@@ -243,7 +243,8 @@ class TicTacToe {
 
   resetGame = () => {
     const reset = document.querySelector('.reset');
-    document.document.querySelector('.reset-move').addEventListener("click", this.reversemove);
+    const resetMove = document.querySelector('.reset-move');
+    resetMove.addEventListener("click", this.reversemove());
     reset.addEventListener('click', () => {
       this.resetContainerFunc();
       this.removeColor();
